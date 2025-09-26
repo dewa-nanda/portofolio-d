@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --color-mako-50: #f4f6f7;
+  --color-mako-100: #e3e8ea;
+  --color-mako-200: #cad2d7;
+  --color-mako-300: #a4b1bc;
+  --color-mako-400: #788998;
+  --color-mako-500: #5c6d7e;
+  --color-mako-600: #4f5b6b;
+  --color-mako-700: #454e59;
+  --color-mako-800: #3d444d;
+  --color-mako-900: #393e46;
+  --color-mako-950: #21252b;
+
+  --color-shark-50: #f6f7f9;
+  --color-shark-100: #edeef1;
+  --color-shark-200: #d6dbe1;
+  --color-shark-300: #b2bcc7;
+  --color-shark-400: #8898a8;
+  --color-shark-500: #6a7b8d;
+  --color-shark-600: #546375;
+  --color-shark-700: #45515f;
+  --color-shark-800: #3c4550;
+  --color-shark-900: #353c45;
+  --color-shark-950: #21252b;
+
+  --color-iron-50: #f5f7f9;
+  --color-iron-100: #e9ecf0;
+  --color-iron-200: #d4dbe3;
+  --color-iron-300: #bcc8d4;
+  --color-iron-400: #9cacbe;
+  --color-iron-500: #8495ad;
+  --color-iron-600: #72819e;
+  --color-iron-700: #66728f;
+  --color-iron-800: #575f76;
+  --color-iron-900: #484f60;
+  --color-iron-950: #2f323c;
+
+  --color-oxford-blue-50: #f6f7f9;
+  --color-oxford-blue-100: #eceff2;
+  --color-oxford-blue-200: #d4dbe3;
+  --color-oxford-blue-300: #aebccb;
+  --color-oxford-blue-400: #8397ad;
+  --color-oxford-blue-500: #637a94;
+  --color-oxford-blue-600: #4f617a;
+  --color-oxford-blue-700: #404f64;
+  --color-oxford-blue-800: #384454;
+  --color-oxford-blue-900: #323b48;
+  --color-oxford-blue-950: #212730;
+
+  --color-shuttle-gray-50: #f4f5f7;
+  --color-shuttle-gray-100: #e4e7e9;
+  --color-shuttle-gray-200: #ccd0d5;
+  --color-shuttle-gray-300: #a8b0b8;
+  --color-shuttle-gray-400: #7d8793;
+  --color-shuttle-gray-500: #5e6874;
+  --color-shuttle-gray-600: #545c66;
+  --color-shuttle-gray-700: #484d56;
+  --color-shuttle-gray-800: #40444a;
+  --color-shuttle-gray-900: #383a41;
+  --color-shuttle-gray-950: #232529;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: #111; /* warna teks default */
+  background-color: var(--color-mako-900);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
