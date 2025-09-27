@@ -1,9 +1,8 @@
 "use client";
 
-import Menu from "@/config/data/menu";
+import Menu from "@/lib/data/menu";
 import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
-import { Component } from "react";
+import { usePathname } from "next/navigation";
 
 export const Sidebar = () => {
   const sidebar = Menu.sidebar();
@@ -14,7 +13,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className="w-[180px] bg-slate-900/80 shadow-lg shadow-blue-900/40 h-fit text-amber-50 rounded-2xl flex flex-col gap-2 p-2">
+    <div className="w-fit bg-slate-900/80 h-fit text-amber-50 rounded-2xl flex flex-col gap-2 p-2">
       {sidebar.map((v, k) => {
         const Icon = v.icon.name;
         const active = isActive(v.href);
@@ -29,8 +28,6 @@ export const Sidebar = () => {
                 : "hover:bg-slate-800 hover:text-blue-300"
             }`}
           >
-            <span className="hidden sm:block">{v.label}</span>
-
             <Icon size={v.icon.size} />
           </Link>
         );

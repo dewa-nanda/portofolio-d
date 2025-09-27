@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <div className="text-center">
       <h1 className="text-6xl font-bold text-blue-500 mb-4">
         Terjadi Kesalahan
       </h1>

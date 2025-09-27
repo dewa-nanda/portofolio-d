@@ -1,6 +1,6 @@
 const NotFound = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1 className="text-6xl font-bold text-blue-500 mb-4">404</h1>
       <h2 className="text-2xl font-semibold text-slate-100 mb-2">
         Oops! Page Not Found

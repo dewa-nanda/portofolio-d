@@ -1,8 +1,19 @@
 import { MdHomeFilled } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IconType } from "react-icons";
+
+type Sidebar = {
+  label: string;
+  href: string;
+  icon: {
+    name: IconType;
+    size: number;
+  };
+};
+
 export default class Menu {
-  static sidebar() {
+  static sidebar(): Sidebar[] {
     return [
       {
         label: "Home",
