@@ -1,12 +1,13 @@
-import { capitalizeFirst, getDayPeriod } from "@/lib/utils/utils";
+import { capitalizeFirst, formatNumber, getDayPeriod } from "@/lib/utils/utils";
 import Card from "../ui/Card";
 import Dashboard from "@/lib/data/dashboard";
 import ProgressFill from "../ui/ProgressFill";
 import Separator from "../ui/Saparator";
 
 const HomePage = () => {
+  const experiance = Dashboard.experiance();
   const techStack = Dashboard.techStack();
-  const nowLearning = Dashboard.NowLearning();
+  const nowLearning = Dashboard.nowLearning();
 
   const period = getDayPeriod();
 
@@ -19,25 +20,17 @@ const HomePage = () => {
       </h1>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 mt-12">
-        <Card className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center">
-          <h3 className="text-2xl text-[#ef4444] font-bold mt-2">13</h3>
-          <p className="text-sm text-slate-400 font-semibold">Projects</p>
-        </Card>
-
-        <Card className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center">
-          <h3 className="text-2xl text-[#ef4444] font-bold mt-2">13</h3>
-          <p className="text-sm text-slate-400 font-semibold">Years Exp</p>
-        </Card>
-
-        <Card className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center">
-          <h3 className="text-2xl text-[#ef4444] font-bold mt-2">13</h3>
-          <p className="text-sm text-slate-400 font-semibold">Technologies</p>
-        </Card>
-
-        <Card className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center">
-          <h3 className="text-2xl text-[#ef4444] font-bold mt-2">13</h3>
-          <p className="text-sm text-slate-400 font-semibold">Commits</p>
-        </Card>
+        {experiance.map((v, k) => (
+          <Card
+            key={`experiance-${k}`}
+            className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center"
+          >
+            <h3 className="text-2xl text-[#ef4444] font-bold mt-2">
+              {v.id === "commits" ? formatNumber(v.count) : v.count}
+            </h3>
+            <p className="text-sm text-slate-400 font-semibold">{v.title}</p>
+          </Card>
+        ))}
       </div>
 
       <div className="grid grid-cols-12 gap-4 w-full mt-10 min-h-[190px]">

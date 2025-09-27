@@ -5,6 +5,12 @@ import { FaVuejs } from "react-icons/fa6";
 import { TbBrandNuxt } from "react-icons/tb";
 import { BiLogoTypescript } from "react-icons/bi";
 
+type Experiance = {
+  id: string;
+  title: string;
+  count: number;
+};
+
 type TechStack = {
   title: string;
   icon: {
@@ -21,6 +27,31 @@ type NowLearning = {
 };
 
 export default class Dashboard {
+  static experiance(): Experiance[] {
+    return [
+      {
+        id: "projects",
+        title: "Projects",
+        count: 5,
+      },
+      {
+        id: "yearsExp",
+        title: "Years Exp",
+        count: 1.5,
+      },
+      {
+        id: "technologies",
+        title: "Technologies",
+        count: 4,
+      },
+      {
+        id: "commits",
+        title: "Commits",
+        count: 2243,
+      },
+    ];
+  }
+
   static techStack(): TechStack[] {
     return [
       {
@@ -65,7 +96,7 @@ export default class Dashboard {
     ];
   }
 
-  static NowLearning(): NowLearning[] {
+  static nowLearning(): NowLearning[] {
     return [
       {
         title: "typescript",
