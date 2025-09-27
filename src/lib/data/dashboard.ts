@@ -14,6 +14,12 @@ type TechStack = {
   };
 };
 
+type NowLearning = {
+  title: string;
+  subTitle?: string;
+  progress: number;
+};
+
 export default class Dashboard {
   static techStack(): TechStack[] {
     return [
@@ -55,6 +61,16 @@ export default class Dashboard {
           size: 34,
           style: "text-[#377cc8]",
         },
+      },
+    ];
+  }
+
+  static NowLearning(): NowLearning[] {
+    return [
+      {
+        title: "typescript",
+        subTitle: "restfull api",
+        progress: 60,
       },
     ];
   }

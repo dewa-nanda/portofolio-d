@@ -13,7 +13,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className="w-fit bg-slate-900/80 h-fit text-amber-50 rounded-2xl flex flex-col gap-2 p-2">
+    <div className="w-fit bg-slate-900/80 h-fit text-amber-50 rounded-2xl flex flex-row sm:flex-col gap-2 p-2">
       {sidebar.map((v, k) => {
         const Icon = v.icon.name;
         const active = isActive(v.href);
