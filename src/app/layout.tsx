@@ -28,10 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="min-h-screen flex items-center justify-center bg-gray-800">
+        <main className="min-h-screen flex items-center justify-center bg-slate-800">
           <section className="flex gap-2 w-10/12 p-4">
             <Sidebar />
-            {children}
+            <section className="max-h-[400px] w-full bg-slate-900 text-center p-10 rounded-2xl shadow-lg shadow-blue-900/40">
+              {children}
+            </section>
           </section>
         </main>
       </body>
