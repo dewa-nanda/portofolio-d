@@ -3,11 +3,13 @@ import Card from "../ui/Card";
 import Dashboard from "@/lib/data/dashboard";
 import ProgressFill from "../ui/ProgressFill";
 import Separator from "../ui/Saparator";
+import ProjectCard from "../ui/ProjectCard";
 
 const HomePage = () => {
   const experiance = Dashboard.experiance();
   const techStack = Dashboard.techStack();
   const nowLearning = Dashboard.nowLearning();
+  const project = Dashboard.projects();
 
   const period = getDayPeriod();
 
@@ -23,7 +25,7 @@ const HomePage = () => {
         {experiance.map((v, k) => (
           <Card
             key={`experiance-${k}`}
-            className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center"
+            className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center border-1 border-[#2a3647]"
           >
             <h3 className="text-2xl text-[#ef4444] font-bold mt-2">
               {v.id === "commits" ? formatNumber(v.count) : v.count}
@@ -35,7 +37,7 @@ const HomePage = () => {
 
       <div className="grid grid-cols-12 gap-4 w-full mt-10 min-h-[190px]">
         <Card
-          className="col-span-full md:col-span-8 bg-[#1d283a]"
+          className="col-span-full md:col-span-8 bg-[#1d283a] border-1 border-[#2a3647]"
           title="💻 Tech Stack"
         >
           <div className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 p-4">
@@ -56,7 +58,7 @@ const HomePage = () => {
         </Card>
 
         <Card
-          className="col-span-full md:col-span-4 bg-[#1d283a]"
+          className="col-span-full md:col-span-4 bg-[#1d283a] border-1 border-[#2a3647]"
           title="📚 Now Learning"
         >
           {nowLearning.map((v, k) => (
@@ -86,10 +88,21 @@ const HomePage = () => {
       </div>
 
       <Card
-        className="w-full mt-6 min-h-[190px] bg-[#1d283a]"
+        className="w-full mt-6 min-h-[190px] bg-[#1d283a] border-1 border-[#2a3647]"
         title="🚀 Current Projects"
       >
-        <h1>halo</h1>
+        <div className="p-4">
+          {project.map((v, k) => (
+            <ProjectCard
+              key={`project-${k}`}
+              title={v.title}
+              status={v.status}
+              progress={v.progress}
+              stack={v.stack}
+              links={v.links}
+            />
+          ))}
+        </div>
       </Card>
     </div>
   );

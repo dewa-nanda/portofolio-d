@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 
 interface ProgressFillProps {
   width: number; // 1 - 100
@@ -8,6 +10,7 @@ interface ProgressFillProps {
   rounded?: string; // contoh: "4px", "9999px" (full)
   showLabel?: boolean; // tampilkan persentase
   className?: string; // tambahan class Tailwind/custom
+  animationDuration?: number; // ms, default 800
 }
 
 const ProgressFill: React.FC<ProgressFillProps> = ({
@@ -18,8 +21,18 @@ const ProgressFill: React.FC<ProgressFillProps> = ({
   rounded = "8px",
   showLabel = false,
   className = "",
+  animationDuration = 800,
 }) => {
   const safeWidth = Math.min(100, Math.max(1, width));
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    // trigger animasi setelah mount
+    const timeout = setTimeout(() => {
+      setProgress(safeWidth);
+    }, 50); // delay kecil biar transition jalan
+    return () => clearTimeout(timeout);
+  }, [safeWidth]);
 
   return (
     <div
@@ -31,12 +44,13 @@ const ProgressFill: React.FC<ProgressFillProps> = ({
       }}
     >
       <div
-        className="transition-all duration-500 ease-in-out group-hover:scale-y-110 origin-center"
+        className="transition-all ease-in-out group-hover:scale-y-110 origin-center"
         style={{
-          width: `${safeWidth}%`,
+          width: `${progress}%`,
           backgroundColor: fillColor,
           height: "100%",
           borderRadius: rounded,
+          transitionDuration: `${animationDuration}ms`,
         }}
       />
       {showLabel && (

@@ -16,11 +16,9 @@ const Card = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={`text-amber-50 rounded-xl border-2 border-[#2a3647] ${className}`}
-    >
+    <div className={`text-amber-50 rounded-xl ${className}`}>
       {title && (
-        <div className="p-2 text-start border-b-2 border-b-[#2a3647]">
+        <div className="p-3 text-start border-b-2 border-b-[#2a3647]">
           <h3 className="text-xl font-semibold">{title}</h3>
         </div>
       )}

@@ -26,6 +26,18 @@ type NowLearning = {
   progress: number;
 };
 
+type Projects = {
+  title: string;
+  status: "Planning" | "In Development" | "Done";
+  stack?: string[];
+  progress?: number;
+  links?: {
+    label: string;
+    href: string;
+    type?: "primary" | "secondary";
+  }[];
+};
+
 export default class Dashboard {
   static experiance(): Experiance[] {
     return [
@@ -42,7 +54,7 @@ export default class Dashboard {
       {
         id: "technologies",
         title: "Technologies",
-        count: 4,
+        count: 5,
       },
       {
         id: "commits",
@@ -102,6 +114,24 @@ export default class Dashboard {
         title: "typescript",
         subTitle: "restfull api",
         progress: 60,
+      },
+    ];
+  }
+
+  static projects(): Projects[] {
+    return [
+      {
+        title: "Portofolio-D v2",
+        status: "In Development",
+        progress: 25,
+        stack: ["react", "next"],
+        links: [
+          {
+            label: "Github",
+            href: "https://github.com/dewa-nanda/portofolio-d",
+            type: "secondary",
+          },
+        ],
       },
     ];
   }
