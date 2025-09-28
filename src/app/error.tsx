@@ -15,13 +15,13 @@ export default function Error({
 
   return (
     <div className="text-center">
-      <h1 className="text-6xl font-bold text-blue-500 mb-4">
+      <h1 className="text-6xl font-bold text-[#ef4444] mb-4">
         Terjadi Kesalahan
       </h1>
       <p className="text-slate-400 mb-6">{error.message}</p>
       <a
         href="/"
-        className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        className="px-6 py-2 bg-[#ef4444] text-white rounded-lg hover:bg-blue-700 transition"
       >
         Kembali ke Beranda
       </a>
