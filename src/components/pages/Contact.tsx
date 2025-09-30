@@ -78,44 +78,46 @@ const Contact = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col sm:flex-row gap-4">
+          <Card className="bg-[#1d283a] border-1 border-[#2a3647] p-4">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <FormField
+                  className="w-full sm:w-1/2"
+                  placeholder="Your name address"
+                  name="name"
+                  label="Name"
+                  register={register}
+                  errors={errors}
+                />
+
+                <FormField
+                  className="w-full sm:w-1/2"
+                  placeholder="Your email address"
+                  name="email"
+                  label="Email"
+                  register={register}
+                  errors={errors}
+                />
+              </div>
+
               <FormField
-                className="w-full sm:w-1/2"
-                placeholder="Your name address"
-                name="name"
-                label="Name"
+                className="w-full mt-4"
+                placeholder="Write something....."
+                name="message"
+                label="Message"
+                type="textarea"
                 register={register}
                 errors={errors}
               />
 
-              <FormField
-                className="w-full sm:w-1/2"
-                placeholder="Your email address"
-                name="email"
-                label="Email"
-                register={register}
-                errors={errors}
-              />
-            </div>
-
-            <FormField
-              className="w-full mt-4"
-              placeholder="Write something....."
-              name="message"
-              label="Message"
-              type="textarea"
-              register={register}
-              errors={errors}
-            />
-
-            <button
-              className="w-full mt-6 rounded-lg p-2 bg-[#151e30] text-white ring-1 ring-gray-300 hover:bg-[#1f2a44] transition-colors hover:cursor-pointer"
-              type="submit"
-            >
-              Send Message
-            </button>
-          </form>
+              <button
+                className="w-full mt-6 rounded-lg p-2 bg-gray-900 text-white font-medium ring-1 ring-gray-700 hover:bg-gray-800 hover:ring-gray-500 transition-colors hover:cursor-pointer"
+                type="submit"
+              >
+                Send Message
+              </button>
+            </form>
+          </Card>
         </div>
       </div>
     </motion.div>

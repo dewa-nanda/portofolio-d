@@ -29,7 +29,7 @@ export default function FormField<T extends Record<string, any>>({
   const baseInputClasses = `ring-1 focus:ring-2 focus:outline-none rounded-lg p-2 w-full transition-all ${
     error
       ? "ring-[#ef4444] focus:ring-[#ef4444]"
-      : "ring-gray-300 focus:ring-cyan-400"
+      : "ring-gray-500 focus:ring-gray-300"
   }`;
 
   return (
