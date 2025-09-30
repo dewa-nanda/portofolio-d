@@ -1,9 +1,7 @@
 import { motion } from "motion/react";
-import { FaReact } from "react-icons/fa";
 import Card from "../Card";
 import Separator from "../Saparator";
 import Collapsible from "../Collapsible";
-import { SiNextdotjs } from "react-icons/si";
 import AboutData from "@/lib/data/about";
 
 const ProfesionalExperianceContent = () => {
