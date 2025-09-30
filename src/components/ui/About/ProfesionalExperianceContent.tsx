@@ -24,7 +24,7 @@ const ProfesionalExperianceContent = () => {
           <div className="flex flex-col gap-4">
             {experiance.job.map((job, kJob) => (
               <div key={`job-${kJob}`}>
-                <Card className="bg-[#222b3f] rounded-sm py-0.5 px-3">
+                <Card className="bg-[#222b3f] rounded-sm  p-6">
                   <div className="mb-4">
                     <h2 className="text-2xl font-bold">{job.title}</h2>
                     <p className="text-sm font-semibold mb-1">{job.role}</p>
