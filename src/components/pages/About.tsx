@@ -1,11 +1,18 @@
+"use client";
+
 import Card from "@/components/ui/Card";
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegFilePdf } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="flex gap-2">
         <Link href="#">
           <Card className="bg-[#151e30] w-fit h-full px-1">
@@ -45,7 +52,27 @@ const About = () => {
           </section>
         </div>
       </Card>
-    </div>
+
+      <div className="flex gap-4 flex-wrap">
+        <Card className="bg-[#151e30] mt-4 w-fit p-2">
+          <picture className="w-full flex justify-center items-center">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=dewa-nanda&show_icons=true&rank_icon=github&theme=nord&hide=issues,contribs"
+              width={500}
+            />
+          </picture>
+        </Card>
+
+        <Card className="bg-[#151e30] mt-4 w-fit p-2">
+          <picture className="w-full">
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=dewa-nanda&stats_format=bytes&layout=compact&theme=nord"
+              width={300}
+            />
+          </picture>
+        </Card>
+      </div>
+    </motion.div>
   );
 };
 

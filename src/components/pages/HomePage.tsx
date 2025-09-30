@@ -4,6 +4,7 @@ import Dashboard from "@/lib/data/dashboard";
 import ProgressFill from "../ui/ProgressFill";
 import Separator from "../ui/Saparator";
 import ProjectCard from "../ui/ProjectCard";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const experiance = Dashboard.experiance();
@@ -14,7 +15,11 @@ const HomePage = () => {
   const period = getDayPeriod();
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <h1 className="text-amber-50 text-start text-4xl font-semibold">
         Good {capitalizeFirst(period)}{" "}
         <span className="text-[#ef4444]">Everyone!</span>{" "}
@@ -104,7 +109,7 @@ const HomePage = () => {
           ))}
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
