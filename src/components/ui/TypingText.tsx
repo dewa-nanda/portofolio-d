@@ -84,12 +84,12 @@ export default function TypingTextComponent({
   }, [texts, textIndex, speed, pause, loop]);
 
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <span className="whitespace-pre">{display}</span>
+    <span className={`inline-block items-center gap-2 ${className}`}>
+      <span className="whitespace-normal break-words ">{display}</span>
       {cursor && (
         <span
           aria-hidden
-          className="ml-0 inline-block h-[1.1em] w-[1px] animate-[blink_1s_steps(2,end)_infinite] bg-current"
+          className="ms-1 ml-0 inline-block h-[1.1em] w-[1px] animate-[blink_1s_steps(2,end)_infinite] bg-current"
         />
       )}
       <style>{`@keyframes blink{50%{opacity:0}} .animate-\[blink_1s_steps\(2,end\)_infinite\]{animation:blink 1s steps(2,end) infinite;}`}</style>
