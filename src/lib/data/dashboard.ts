@@ -1,6 +1,6 @@
-import { FaReact } from "react-icons/fa";
+import { FaPython, FaReact } from "react-icons/fa";
 import { IconType } from "react-icons";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiTensorflow } from "react-icons/si";
 import { FaVuejs } from "react-icons/fa6";
 import { TbBrandNuxt } from "react-icons/tb";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -105,6 +105,22 @@ export default class Dashboard {
           style: "text-[#377cc8]",
         },
       },
+      {
+        title: "python",
+        icon: {
+          name: FaPython,
+          size: 34,
+          style: "text-[#3a719c]",
+        },
+      },
+      {
+        title: "tensorflow",
+        icon: {
+          name: SiTensorflow,
+          size: 34,
+          style: "text-[#ffb508]",
+        },
+      },
     ];
   }
 
@@ -123,7 +139,7 @@ export default class Dashboard {
       {
         title: "Portofolio-D v2",
         status: "In Development",
-        progress: 25,
+        progress: 50,
         stack: ["react", "next"],
         links: [
           {
