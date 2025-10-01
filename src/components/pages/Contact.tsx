@@ -83,7 +83,7 @@ const Contact = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <FormField
                   className="w-full sm:w-1/2"
-                  placeholder="Your name address"
+                  placeholder="Your name"
                   name="name"
                   label="Name"
                   register={register}
