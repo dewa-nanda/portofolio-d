@@ -1,4 +1,4 @@
-import { MdHomeFilled } from "react-icons/md";
+import { MdFolderShared, MdHomeFilled } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IconType } from "react-icons";
@@ -29,6 +29,14 @@ export default class Menu {
         icon: {
           name: FaUser,
           size: 16,
+        },
+      },
+      {
+        label: "Project",
+        href: "/project",
+        icon: {
+          name: MdFolderShared,
+          size: 20,
         },
       },
       {

@@ -44,7 +44,7 @@ export default class Dashboard {
       {
         id: "projects",
         title: "Projects",
-        count: 5,
+        count: 7,
       },
       {
         id: "yearsExp",
@@ -54,7 +54,7 @@ export default class Dashboard {
       {
         id: "technologies",
         title: "Technologies",
-        count: 5,
+        count: 7,
       },
       {
         id: "commits",

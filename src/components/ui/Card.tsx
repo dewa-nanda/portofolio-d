@@ -10,10 +10,12 @@ const Card = ({
   title,
   children,
   className = "",
+  childrenClassName = "",
 }: {
   title?: string;
   children: React.ReactNode;
   className?: string;
+  childrenClassName?: string;
 }) => {
   return (
     <div className={`text-amber-50 rounded-xl ${className}`}>
@@ -22,7 +24,7 @@ const Card = ({
           <h3 className="text-xl font-semibold">{title}</h3>
         </div>
       )}
-      <div className="p-2 h-full">{children}</div>
+      <div className={`p-2 h-full ${childrenClassName}`}>{children}</div>
     </div>
   );
 };
