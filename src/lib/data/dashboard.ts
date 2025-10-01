@@ -138,8 +138,8 @@ export default class Dashboard {
     return [
       {
         title: "Portofolio-D v2",
-        status: "In Development",
-        progress: 50,
+        status: "Done",
+        progress: 100,
         stack: ["react", "next"],
         links: [
           {
