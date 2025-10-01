@@ -8,7 +8,7 @@ import { TbBrandNuxt } from "react-icons/tb";
 type Content = {
   id: string;
   label: string;
-  component: React.ComponentType<any>;
+  component: React.ComponentType<unknown>;
 };
 
 type ProfesionalExperiance = {

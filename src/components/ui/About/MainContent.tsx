@@ -54,6 +54,7 @@ const MainContent = () => {
               <img
                 src="https://github-readme-stats.vercel.app/api?username=dewa-nanda&show_icons=true&rank_icon=github&theme=nord&hide=issues,contribs&custom_title=GitHub Stats"
                 width={500}
+                alt="github stats user"
               />
             </picture>
 
@@ -61,6 +62,7 @@ const MainContent = () => {
               <img
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=dewa-nanda&stats_format=percentages&layout=compact&theme=nord"
                 width={300}
+                alt="github stats top language"
               />
             </picture>
           </div>
@@ -70,6 +72,7 @@ const MainContent = () => {
           <picture className="w-fit">
             <img
               src="https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"
+              alt="wakatime stats"
               width={400}
             />
           </picture>

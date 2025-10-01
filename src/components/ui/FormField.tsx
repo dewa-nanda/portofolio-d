@@ -1,6 +1,6 @@
 import { UseFormRegister, FieldErrors, Path } from "react-hook-form";
 
-interface FormFieldProps<T extends Record<string, any>> {
+interface FormFieldProps<T extends Record<string, unknown>> {
   name: Path<T>;
   label: string;
   placeholder?: string;
@@ -12,7 +12,7 @@ interface FormFieldProps<T extends Record<string, any>> {
   rows?: number;
 }
 
-export default function FormField<T extends Record<string, any>>({
+export default function FormField<T extends Record<string, unknown>>({
   name,
   label,
   placeholder,

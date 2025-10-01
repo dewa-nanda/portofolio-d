@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const NotFound = () => {
   return (
     <div className="text-center">
@@ -8,12 +10,12 @@ const NotFound = () => {
       <p className="text-slate-400 mb-6">
         Sepertinya halaman yang kamu cari tidak tersedia atau sudah dipindahkan.
       </p>
-      <a
+      <Link
         href="/"
         className="!no-underline px-6 py-2 bg-[#ef4444] text-white rounded-lg hover:bg-[#ef4444a9] transition"
       >
         Kembali ke Beranda
-      </a>
+      </Link>
     </div>
   );
 };
