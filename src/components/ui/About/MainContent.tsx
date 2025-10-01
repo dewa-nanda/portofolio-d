@@ -15,7 +15,7 @@ const MainContent = () => {
           <section className="w-full lg:w-1/2 flex justify-center flex-col gap-1">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold">
               <span className="underline decoration-[#ef4444]">
-                Hi, I'm Dewa
+                {`Hi, I'm Dewa`}
               </span>{" "}
               Putra Hernanda
             </h2>
