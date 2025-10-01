@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Error({
@@ -19,12 +20,12 @@ export default function Error({
         Terjadi Kesalahan
       </h1>
       <p className="text-slate-400 mb-6">{error.message}</p>
-      <a
+      <Link
         href="/"
         className="px-6 py-2 bg-[#ef4444] text-white rounded-lg hover:bg-blue-700 transition"
       >
         Kembali ke Beranda
-      </a>
+      </Link>
     </div>
   );
 }
