@@ -21,7 +21,7 @@ const Project = () => {
         </Card>
       </div>
 
-      <div className="mt-8 flex gap-2">
+      <div className="mt-8 flex gap-4 flex-wrap">
         {listPorject.map((v, k) => (
           <Link href={`/project/${v.id}`} key={`project-${k}`}>
             <Card

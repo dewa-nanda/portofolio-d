@@ -90,7 +90,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
             </h2>
           </div>
 
-          <div className="flex gap-2 mt-4">
+          <div className="flex flex-wrap gap-2 mt-4">
             {detail.stack.map((v, k) => (
               <div
                 className="bg-[#151e30] rounded-lg text-sm px-4 py-1 hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] hover:bg-[#1a253d] shadow-md"
