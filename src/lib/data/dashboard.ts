@@ -129,7 +129,7 @@ export default class Dashboard {
       {
         title: "typescript",
         subTitle: "restfull api",
-        progress: 60,
+        progress: 100,
       },
     ];
   }
