@@ -96,7 +96,7 @@ const HomePage = () => {
         className="w-full mt-6 min-h-[190px] bg-[#1d283a] border-1 border-[#2a3647]"
         title="🚀 Current Projects"
       >
-        <div className="p-4">
+        <div className="p-4 flex flex-col gap-4">
           {project.map((v, k) => (
             <ProjectCard
               key={`project-${k}`}

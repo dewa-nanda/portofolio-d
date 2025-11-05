@@ -137,10 +137,23 @@ export default class Dashboard {
   static projects(): Projects[] {
     return [
       {
-        title: "Portofolio-D v2",
+        title: "Landing page - Coffe shop",
+        status: "In Development",
+        progress: 25,
+        stack: ["react", "tailwind"],
+        links: [
+          {
+            label: "Github",
+            href: "https://github.com/dewa-nanda/coffe-shop-landing-page-D",
+            type: "secondary",
+          },
+        ],
+      },
+      {
+        title: "Portofolio D v2",
         status: "Done",
         progress: 100,
-        stack: ["react", "next"],
+        stack: ["react", "next", "tailwind"],
         links: [
           {
             label: "Github",
