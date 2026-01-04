@@ -6,7 +6,7 @@ import { TbSwitchHorizontal } from "react-icons/tb";
 interface THeaderProps {
   section: string;
   content: string[];
-  setSection: React.Dispatch<React.SetStateAction<string>>;
+  setSection: (section: string) => void;
 }
 
 const Header = (props: THeaderProps) => {

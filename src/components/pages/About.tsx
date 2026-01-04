@@ -3,30 +3,35 @@
 import { motion } from "framer-motion";
 import Header from "../ui/About/Header";
 import { ReactElement, useEffect, useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import AboutData from "@/lib/data/about";
 
 const About = () => {
   const listSection = AboutData.content();
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const [section, setSection] = useState<string>("");
+  const tabParam = searchParams.get("tab");
+  const validTabs = listSection.map((v) => v.id);
+  const currentSection = validTabs.includes(tabParam ?? "")
+    ? tabParam!
+    : listSection[0].id;
+
   const [content, setContent] = useState<ReactElement | null>(null);
 
+  const setSection = (newSection: string) => {
+    router.push(`/about?tab=${encodeURIComponent(newSection)}`);
+  };
+
   useEffect(() => {
-    const target = listSection.find((v) => v.label === section);
+    const target = listSection.find((v) => v.id === currentSection);
 
     if (target) {
       const SectionComponent = target.component;
       setContent(<SectionComponent />);
     }
-  }, [section]);
+  }, [currentSection]);
 
-  useEffect(() => {
-    const initalData = listSection[0];
-    const SectionComponent = initalData.component;
-
-    setSection(initalData.label);
-    setContent(<SectionComponent />);
-  }, []);
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -34,9 +39,9 @@ const About = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <Header
-        section={section}
+        section={currentSection}
         setSection={setSection}
-        content={listSection.map((v) => v.label)}
+        content={validTabs}
       />
 
       {content}
