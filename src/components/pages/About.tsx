@@ -5,6 +5,7 @@ import Header from "../ui/About/Header";
 import { ReactElement, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import AboutData from "@/lib/data/about";
+import { Suspense } from "react";
 
 const About = () => {
   const listSection = AboutData.content();
@@ -33,19 +34,21 @@ const About = () => {
   }, [currentSection]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <Header
-        section={currentSection}
-        setSection={setSection}
-        content={validTabs}
-      />
+    <Suspense fallback={<div>Loading...</div>}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <Header
+          section={currentSection}
+          setSection={setSection}
+          content={validTabs}
+        />
 
-      {content}
-    </motion.div>
+        {content}
+      </motion.div>
+    </Suspense>
   );
 };
 
