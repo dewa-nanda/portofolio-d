@@ -7,7 +7,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import AboutData from "@/lib/data/about";
 import { Suspense } from "react";
 
-const About = () => {
+const AboutContent = () => {
   const listSection = AboutData.content();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -34,20 +34,26 @@ const About = () => {
   }, [currentSection, listSection]);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <Header
-          section={currentSection}
-          setSection={setSection}
-          content={validTabs}
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <Header
+        section={currentSection}
+        setSection={setSection}
+        content={validTabs}
+      />
 
-        {content}
-      </motion.div>
+      {content}
+    </motion.div>
+  );
+};
+
+const About = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent />
     </Suspense>
   );
 };
