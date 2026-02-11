@@ -31,7 +31,7 @@ const About = () => {
       const SectionComponent = target.component;
       setContent(<SectionComponent />);
     }
-  }, [currentSection]);
+  }, [currentSection, listSection]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
