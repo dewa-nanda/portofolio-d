@@ -1,10 +1,11 @@
-import { capitalizeFirst, formatNumber, getDayPeriod } from "@/lib/utils/utils";
+import { formatNumber } from "@/lib/utils/utils";
 import Card from "../ui/Card";
 import Dashboard from "@/lib/data/dashboard";
 import ProgressFill from "../ui/ProgressFill";
 import Separator from "../ui/Saparator";
 import ProjectCard from "../ui/ProjectCard";
 import { motion } from "framer-motion";
+import Greetings from "../ui/home/Greetings";
 
 const HomePage = () => {
   const experiance = Dashboard.experiance();
@@ -12,21 +13,15 @@ const HomePage = () => {
   const nowLearning = Dashboard.nowLearning();
   const project = Dashboard.projects();
 
-  const period = getDayPeriod();
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <h1 className="text-amber-50 text-start text-4xl font-semibold">
-        Good {capitalizeFirst(period)}{" "}
-        <span className="text-[#ef4444]">Everyone!</span>{" "}
-        <span className="inline-block animate-wave">👋</span>
-      </h1>
+      <Greetings />
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 mt-12">
+      <section className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 mt-12">
         {experiance.map((v, k) => (
           <Card
             key={`experiance-${k}`}
@@ -38,9 +33,9 @@ const HomePage = () => {
             <p className="text-sm text-slate-400 font-semibold">{v.title}</p>
           </Card>
         ))}
-      </div>
+      </section>
 
-      <div className="grid grid-cols-12 gap-4 w-full mt-10 min-h-[190px]">
+      <section className="grid grid-cols-12 gap-4 w-full mt-10 min-h-[190px]">
         <Card
           className="col-span-full md:col-span-8 bg-[#1d283a] border-1 border-[#2a3647]"
           title="💻 Tech Stack"
@@ -90,7 +85,7 @@ const HomePage = () => {
             </div>
           ))}
         </Card>
-      </div>
+      </section>
 
       <Card
         className="w-full mt-6 min-h-[190px] bg-[#1d283a] border-1 border-[#2a3647]"
