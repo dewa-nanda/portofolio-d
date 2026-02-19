@@ -2,8 +2,22 @@ import Card from "@/components/ui/Card";
 import Image from "next/image";
 import TypingText from "../TypingText";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 const MainContent = () => {
+  const [githubStatsLoaded, setGithubStatsLoaded] = useState(true);
+  const [topLangsLoaded, setTopLangsLoaded] = useState(true);
+  const [wakatimeLoaded, setWakatimeLoaded] = useState(true);
+
+  const handleImageError = (
+    setter: (value: boolean) => void,
+    e: React.SyntheticEvent<HTMLImageElement>,
+  ) => {
+    if ((e.target as HTMLImageElement).src) {
+      setter(false);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -48,35 +62,46 @@ const MainContent = () => {
       </Card>
 
       <div className="flex flex-col xl:flex-row gap-2 justify-between">
-        <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2">
-          <div className="flex flex-col xl:flex-row gap-4 justify-center items-center">
+        {(githubStatsLoaded || topLangsLoaded) && (
+          <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2">
+            <div className="flex flex-col xl:flex-row gap-4 justify-center items-center">
+              {githubStatsLoaded && (
+                <picture className="w-fit">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api?username=dewa-nanda&show_icons=true&rank_icon=github&theme=nord&hide=issues,contribs&custom_title=GitHub Stats"
+                    width={500}
+                    alt="github stats user"
+                    onError={(e) => handleImageError(setGithubStatsLoaded, e)}
+                  />
+                </picture>
+              )}
+
+              {topLangsLoaded && (
+                <picture className="w-fit">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=dewa-nanda&stats_format=percentages&layout=compact&theme=nord"
+                    width={300}
+                    alt="github stats top language"
+                    onError={(e) => handleImageError(setTopLangsLoaded, e)}
+                  />
+                </picture>
+              )}
+            </div>
+          </Card>
+        )}
+
+        {wakatimeLoaded && (
+          <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2 flex flex-col justify-center items-center">
             <picture className="w-fit">
               <img
-                src="https://github-readme-stats.vercel.app/api?username=dewa-nanda&show_icons=true&rank_icon=github&theme=nord&hide=issues,contribs&custom_title=GitHub Stats"
-                width={500}
-                alt="github stats user"
+                src="https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"
+                alt="wakatime stats"
+                width={400}
+                onError={(e) => handleImageError(setWakatimeLoaded, e)}
               />
             </picture>
-
-            <picture className="w-fit">
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=dewa-nanda&stats_format=percentages&layout=compact&theme=nord"
-                width={300}
-                alt="github stats top language"
-              />
-            </picture>
-          </div>
-        </Card>
-
-        <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2 flex flex-col justify-center items-center">
-          <picture className="w-fit">
-            <img
-              src="https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"
-              alt="wakatime stats"
-              width={400}
-            />
-          </picture>
-        </Card>
+          </Card>
+        )}
       </div>
     </motion.div>
   );
