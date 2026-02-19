@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import Header from "../ui/About/Header";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import AboutData from "@/lib/data/about";
 import { Suspense } from "react";
 
 const AboutContent = () => {
-  const listSection = AboutData.content();
+  const listSection = useMemo(() => AboutData.content(), []);
   const searchParams = useSearchParams();
   const router = useRouter();
 
