@@ -24,7 +24,7 @@ const MainContent = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Card className="bg-[#151e30] w-full h-full p-4 mt-4">
+      <Card variant="surface" className="w-full h-full p-4 mt-4">
         <div className="flex gap-2 min-h-[200px]">
           <section className="w-full lg:w-1/2 flex justify-center flex-col gap-1">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold">
@@ -63,7 +63,7 @@ const MainContent = () => {
 
       <div className="flex flex-col xl:flex-row gap-2 justify-between">
         {(githubStatsLoaded || topLangsLoaded) && (
-          <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2">
+          <Card variant="surface" className="mt-4 w-full xl:w-fit h-fit p-2">
             <div className="flex flex-col xl:flex-row gap-4 justify-center items-center">
               {githubStatsLoaded && (
                 <picture className="w-fit">
@@ -91,7 +91,10 @@ const MainContent = () => {
         )}
 
         {wakatimeLoaded && (
-          <Card className="bg-[#151e30] mt-4 w-full xl:w-fit h-fit p-2 flex flex-col justify-center items-center">
+          <Card
+            variant="surface"
+            className="mt-4 w-full xl:w-fit h-fit p-2 flex flex-col justify-center items-center"
+          >
             <picture className="w-fit">
               <img
                 src="https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"

@@ -63,7 +63,10 @@ const Contact = () => {
                       className="w-fit"
                       key={`social-media-${k}`}
                     >
-                      <Card className="mt-2 bg-[#151e30] w-fit p-1 border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444]">
+                      <Card
+                        variant="surfaceInteractive"
+                        className="mt-2 w-fit p-1"
+                      >
                         <Icon
                           size={v.icon.size}
                           className={`${v.icon.style}`}
@@ -78,7 +81,7 @@ const Contact = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <Card className="bg-[#1d283a] border-1 border-[#2a3647] p-4">
+          <Card variant="panel" className="p-4">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <FormField

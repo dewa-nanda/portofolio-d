@@ -17,12 +17,13 @@ const ProfesionalExperianceContent = () => {
         <Card
           key={`profesional-experiance-${kExperiance}`}
           title={experiance.year}
-          className="bg-[#151e30] w-full h-full p-4 mt-4"
+          variant="surface"
+          className="w-full h-full p-4 mt-4"
         >
           <div className="flex flex-col gap-4">
             {experiance.job.map((job, kJob) => (
               <div key={`job-${kJob}`}>
-                <Card className="bg-[#222b3f] rounded-sm  p-6">
+                <Card variant="muted" className="p-6">
                   <div className="mb-4">
                     <h2 className="text-2xl font-bold">{job.title}</h2>
                     <p className="text-sm font-semibold mb-1">{job.role}</p>

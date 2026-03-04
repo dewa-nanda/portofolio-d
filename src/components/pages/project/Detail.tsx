@@ -19,7 +19,10 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
       className="text-white"
     >
       <Link href={"/project"} className="block w-fit hover:!no-underline">
-        <Card className="flex items-center gap-2 bg-[#151e30] px-2 rounded-xl hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] hover:bg-[#1a253d] shadow-md">
+        <Card
+          variant="surfaceInteractive"
+          className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-[#1a253d] shadow-md"
+        >
           <div className="flex gap-1 items-center">
             <IoArrowBack />
             <span>Back</span>
@@ -44,7 +47,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
       </div>
 
       <div className="mt-6 flex flex-col gap-4">
-        <Card className="bg-[#1b2538] border-1 border-slate-700 p-3">
+        <Card variant="detail" className="p-3">
           <div>
             <h2 className="text-3xl font-bold text-white line-clamp-1">
               {detail.title}
@@ -57,7 +60,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
           </div>
         </Card>
 
-        <Card className="bg-[#1b2538] border-1 border-slate-700 p-3">
+        <Card variant="detail" className="p-3">
           <div className="flex gap-2">
             <Separator
               orientation="vertical"
@@ -71,7 +74,8 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
           <div className="mt-4 flex flex-col gap-2">
             {detail.keyFeatures.map((v, k) => (
               <Card
-                className="bg-[#151f32] p-2 hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-[#ef4444] hover:bg-[#1a253d] shadow-md"
+                variant="surfaceInteractive"
+                className="bg-[#151f32] p-2 hover:cursor-pointer hover:-translate-y-0.5 hover:bg-[#1a253d] shadow-md"
                 key={`key-features-${k}`}
               >
                 <div className="flex gap-3">
@@ -83,7 +87,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
           </div>
         </Card>
 
-        <Card className="bg-[#1b2538] border-1 border-slate-700 p-3">
+        <Card variant="detail" className="p-3">
           <div className="flex gap-2">
             <h2 className="text-xl font-bold text-white line-clamp-1">
               Tech Stack
@@ -102,7 +106,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
           </div>
         </Card>
 
-        <Card className="bg-[#1b2538] border-1 border-slate-700 p-3">
+        <Card variant="detail" className="p-3">
           <div className="flex gap-2">
             <h2 className="text-xl font-bold text-white line-clamp-1">
               Project Info
@@ -146,7 +150,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
               href={detail.link.demo}
               className="hover:!no-underline"
             >
-              <Card className="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-medium py-1 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30">
+              <Card variant="actionPrimary">
                 <div className="flex items-center justify-center gap-2">
                   <TbExternalLink size={20} />
                   <p className="text-[#ffffff]">View Live Demo</p>
@@ -161,7 +165,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
               href={detail.link.github}
               className="hover:!no-underline"
             >
-              <Card className="w-full flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-medium py-1 rounded-xl transition-all duration-300 border border-slate-600">
+              <Card variant="actionSecondary">
                 <div className="flex items-center justify-center gap-2">
                   <FaGithub size={18} />
                   <p className="text-[#ffffff]">View Source Code</p>

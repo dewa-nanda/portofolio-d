@@ -34,14 +34,14 @@ const Header = (props: THeaderProps) => {
           href="https://drive.google.com/file/d/1mZIRUEVDJWAas45gmHtcGb_FS4Y3j17k/view?usp=sharing"
           target="_blank"
         >
-          <Card className="bg-[#151e30] w-fit h-full px-1 border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444]">
+          <Card variant="surfaceInteractive" className="w-fit h-full px-1">
             <div className="flex justify-center items-center h-full">
               <FaRegFilePdf size={21} />
             </div>
           </Card>
         </Link>
 
-        <Card className="bg-[#151e30] w-fit p-1 px-2">
+        <Card variant="surface" className="w-fit p-1 px-2">
           <h1 className="text-start text-lg line-clamp-1">
             Software Developer
           </h1>
@@ -49,7 +49,10 @@ const Header = (props: THeaderProps) => {
       </div>
 
       <button className="z-1" onClick={onClickSection}>
-        <Card className="bg-[#151e30] h-[50px] px-1 border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] hover:cursor-pointer">
+        <Card
+          variant="surfaceInteractive"
+          className="h-[50px] px-1 hover:cursor-pointer"
+        >
           <div className="flex items-center justify-center mt-1 gap-2">
             <TbSwitchHorizontal className="h-full" size={20} />
 

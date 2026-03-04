@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 import Greetings from "../ui/home/Greetings";
 
 const HomePage = () => {
-  const experiance = Dashboard.experiance();
-  const techStack = Dashboard.techStack();
+  const experiances = Dashboard.experiance();
+  const techStacks = Dashboard.techStack();
   const nowLearning = Dashboard.nowLearning();
   const project = Dashboard.projects();
 
@@ -22,35 +22,41 @@ const HomePage = () => {
       <Greetings />
 
       <section className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 mt-12">
-        {experiance.map((v, k) => (
-          <Card
-            key={`experiance-${k}`}
-            className="bg-[#141d2f] text-center w-full h-[90px] flex justify-center items-center border-1 border-[#2a3647]"
-          >
+        {experiances.map((experience, key) => (
+          <Card key={`experiance-${key}`} variant="summary">
             <h3 className="text-2xl text-[#ef4444] font-bold mt-2">
-              {v.id === "commits" ? formatNumber(v.count) : v.count}
+              {experience.id === "commits"
+                ? formatNumber(experience.count)
+                : experience.count}
             </h3>
-            <p className="text-sm text-slate-400 font-semibold">{v.title}</p>
+
+            <p className="text-sm text-slate-400 font-semibold">
+              {experience.title}
+            </p>
           </Card>
         ))}
       </section>
 
       <section className="grid grid-cols-12 gap-4 w-full mt-10 min-h-[190px]">
         <Card
-          className="col-span-full md:col-span-8 bg-[#1d283a] border-1 border-[#2a3647]"
+          variant="panel"
+          className="col-span-full md:col-span-8"
           title="💻 Tech Stack"
         >
           <div className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 p-4">
-            {techStack.map((v, k) => {
-              const Icon = v.icon.name;
+            {techStacks.map((techStack, key) => {
+              const Icon = techStack.icon.name;
 
               return (
                 <div
-                  key={k}
+                  key={key}
                   className="hover-animate bg-[#151e30] rounded-sm p-2 flex flex-col justify-center items-center gap-1 hover:cursor-pointer"
                 >
-                  <Icon size={v.icon.size} className={`${v.icon.style}`} />
-                  <p>{v.title}</p>
+                  <Icon
+                    size={techStack.icon.size}
+                    className={`${techStack.icon.style}`}
+                  />
+                  <p>{techStack.title}</p>
                 </div>
               );
             })}
@@ -58,7 +64,8 @@ const HomePage = () => {
         </Card>
 
         <Card
-          className="col-span-full md:col-span-4 bg-[#1d283a] border-1 border-[#2a3647]"
+          variant="panel"
+          className="col-span-full md:col-span-4"
           title="📚 Now Learning"
         >
           {nowLearning.map((v, k) => (
@@ -88,7 +95,8 @@ const HomePage = () => {
       </section>
 
       <Card
-        className="w-full mt-6 min-h-[190px] bg-[#1d283a] border-1 border-[#2a3647]"
+        variant="panel"
+        className="w-full mt-6 min-h-[190px]"
         title="🚀 Current Projects"
       >
         <div className="p-4 flex flex-col gap-4">

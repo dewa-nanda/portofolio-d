@@ -16,7 +16,7 @@ const Project = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div>
-        <Card className="bg-[#151e30] w-fit px-2">
+        <Card variant="surface" className="w-fit px-2">
           <h1 className="text-start text-lg line-clamp-1">Projects</h1>
         </Card>
       </div>
@@ -25,7 +25,8 @@ const Project = () => {
         {listPorject.map((v, k) => (
           <Link href={`/project/${v.id}`} key={`project-${k}`}>
             <Card
-              className="bg-[#151e30] w-fit hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] h-full"
+              variant="surfaceInteractive"
+              className="w-fit hover:cursor-pointer h-full"
               childrenClassName="!p-3"
             >
               <div className="flex flex-col gap-3">

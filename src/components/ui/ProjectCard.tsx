@@ -27,7 +27,7 @@ const ProjectCard = ({
   links = [],
 }: ProjectCardProps) => {
   return (
-    <Card className="bg-[#151d30] p-2 border border-transparent rounded-lg transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444]">
+    <Card variant="project" className="p-2">
       <div>
         <div className="flex items-center gap-2 flex-wrap">
           <h3 className="font-semibold">{title}</h3>
