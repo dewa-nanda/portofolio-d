@@ -127,8 +127,12 @@ export default class Dashboard {
   static nowLearning(): NowLearning[] {
     return [
       {
+        title: "Nest",
+        subTitle: "backend",
+        progress: 25,
+      },
+      {
         title: "typescript",
-        subTitle: "restfull api",
         progress: 100,
       },
     ];
@@ -136,19 +140,6 @@ export default class Dashboard {
 
   static projects(): Projects[] {
     return [
-      // {
-      //   title: "Landing page - Coffe shop",
-      //   status: "In Development",
-      //   progress: 25,
-      //   stack: ["react", "tailwind"],
-      //   links: [
-      //     {
-      //       label: "Github",
-      //       href: "https://github.com/dewa-nanda/coffe-shop-landing-page-D",
-      //       type: "secondary",
-      //     },
-      //   ],
-      // },
       {
         title: "Portofolio D v2",
         status: "Done",

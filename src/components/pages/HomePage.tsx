@@ -1,17 +1,13 @@
-import { formatNumber } from "@/lib/utils/utils";
-import Card from "../ui/Card";
-import Dashboard from "@/lib/data/dashboard";
-import ProgressFill from "../ui/ProgressFill";
-import Separator from "../ui/Saparator";
-import ProjectCard from "../ui/ProjectCard";
 import { motion } from "framer-motion";
+import { formatNumber } from "@/lib/utils/utils";
+import useDashboard from "@/hooks/useDashboard";
+import Card from "../ui/Card";
+import ProgressFill from "../ui/ProgressFill";
+import ProjectCard from "../ui/ProjectCard";
 import Greetings from "../ui/home/Greetings";
 
 const HomePage = () => {
-  const experiances = Dashboard.experiance();
-  const techStacks = Dashboard.techStack();
-  const nowLearning = Dashboard.nowLearning();
-  const project = Dashboard.projects();
+  const { summary, activity } = useDashboard();
 
   return (
     <motion.div
@@ -22,7 +18,7 @@ const HomePage = () => {
       <Greetings />
 
       <section className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 mt-12">
-        {experiances.map((experience, key) => (
+        {summary.experiances.map((experience, key) => (
           <Card key={`experiance-${key}`} variant="summary">
             <h3 className="text-2xl text-[#ef4444] font-bold mt-2">
               {experience.id === "commits"
@@ -41,12 +37,11 @@ const HomePage = () => {
         <Card
           variant="panel"
           className="col-span-full md:col-span-8"
-          title="💻 Tech Stack"
+          title="Skills"
         >
           <div className="grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-4 p-4">
-            {techStacks.map((techStack, key) => {
+            {summary.techStacks.map((techStack, key) => {
               const Icon = techStack.icon.name;
-
               return (
                 <div
                   key={key}
@@ -66,52 +61,54 @@ const HomePage = () => {
         <Card
           variant="panel"
           className="col-span-full md:col-span-4"
-          title="📚 Now Learning"
+          title="Now Learning"
         >
-          {nowLearning.map((v, k) => (
-            <div key={`now-learning-${k}`}>
+          <div>
+            {activity.learning && (
               <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex-shrink-0 flex flex-col justify-center py-2 space-y-1 w-full p-2">
                   <p className="text-base text-slate-200 font-bold">
-                    {v.title}
+                    {activity.learning.title}
                   </p>
-                  <p className="text-xs text-slate-400">{v.subTitle}</p>
+                  <p className="text-xs text-slate-400">
+                    {activity.learning.subTitle}
+                  </p>
                 </div>
 
                 <div className="flex-1 flex items-center min-w-[120px] p-2">
                   <ProgressFill
                     showLabel
-                    width={v.progress}
+                    width={activity.learning.progress}
                     fillColor="#ef4444"
                     bgColor="#344053"
                   />
                 </div>
               </div>
-
-              <Separator className="my-4" />
-            </div>
-          ))}
+            )}
+          </div>
         </Card>
       </section>
 
-      <Card
-        variant="panel"
-        className="w-full mt-6 min-h-[190px]"
-        title="🚀 Current Projects"
-      >
-        <div className="p-4 flex flex-col gap-4">
-          {project.map((v, k) => (
-            <ProjectCard
-              key={`project-${k}`}
-              title={v.title}
-              status={v.status}
-              progress={v.progress}
-              stack={v.stack}
-              links={v.links}
-            />
-          ))}
-        </div>
-      </Card>
+      <section>
+        <Card
+          variant="panel"
+          className="w-full mt-6 min-h-[190px]"
+          title="Current Projects"
+        >
+          <div className="p-4 flex flex-col gap-4">
+            {summary.project.map((v, k) => (
+              <ProjectCard
+                key={`project-${k}`}
+                title={v.title}
+                status={v.status}
+                progress={v.progress}
+                stack={v.stack}
+                links={v.links}
+              />
+            ))}
+          </div>
+        </Card>
+      </section>
     </motion.div>
   );
 };
