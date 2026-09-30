@@ -2,7 +2,7 @@ import MainContent from "@/components/ui/About/MainContent";
 import ProfesionalExperianceContent from "@/components/ui/About/ProfesionalExperianceContent";
 import { IconType } from "react-icons";
 import { FaPython, FaReact, FaVuejs } from "react-icons/fa";
-import { SiNextdotjs, SiTensorflow } from "react-icons/si";
+import { SiNextdotjs, SiTensorflow, SiGo, SiLaravel, SiLivewire } from "react-icons/si";
 import { TbBrandNuxt } from "react-icons/tb";
 
 type Content = {
@@ -48,6 +48,109 @@ export default class AboutData {
 
   static profesionalExperianceData(): ProfesionalExperiance[] {
     return [
+      {
+        year: "2026",
+        job: [
+          {
+            title: "GeekGarden",
+            role: "Fullstack Developer",
+            date: "Feb 2026 - now",
+            task: [
+              "Berkolaborasi dengan tim developer dalam mengembangkan dan meningkatkan fitur website sesuai kebutuhan bisnis.",
+              "Melakukan maintenance website secara rutin untuk memastikan performa, keamanan, dan stabilitas tetap terjaga.",
+              "Berhasil menyelesaikan setiap sprint dalam timeline ketat dengan Agile/Scrum, memastikan project selesai tepat waktu tanpa mengurangi kualitas.",
+              "Berkontribusi dalam penerapan best practice front-end development agar kode lebih efisien dan mudah dipelihara.",
+            ],
+            result: [
+              {
+                title: "GeekGarden - E-commerce v2",
+                date: "Jul 2026 - Sept 2026",
+                task: [
+                  "Membangun backend service e-commerce v2 menggunakan Go.",
+                  "Merancang dan mengimplementasikan REST API untuk alur inti e-commerce: produk, keranjang, checkout, dan order.",
+                  "Menangani transaksi, pemrosesan order, dan konsistensi data antar layanan.",
+                  "Mengoptimalkan performa API agar mampu menangani request dengan traffic tinggi.",
+                  "Berkolaborasi dengan tim frontend dalam integrasi API dan testing.",
+                ],
+                stack: [
+                  {
+                    title: "go",
+                    icon: {
+                      name: SiGo,
+                      size: 28,
+                      style: "text-[#00ADD8]",
+                    },
+                  },
+                ],
+              },
+              {
+                title: "GeekGarden - E-commerce v1",
+                date: "Jun 2026 - Jul 2026",
+                task: [
+                  "Mengembangkan platform e-commerce v1 end-to-end sebagai fullstack developer.",
+                  "Membangun backend menggunakan Laravel dengan Livewire untuk UI dinamis server-driven.",
+                  "Mengimplementasikan komponen frontend interaktif dengan Vue.",
+                  "Mengintegrasikan modul produk, keranjang, checkout, dan order.",
+                  "Melakukan testing dan bug fixing sebelum deployment.",
+                ],
+                stack: [
+                  {
+                    title: "laravel",
+                    icon: {
+                      name: SiLaravel,
+                      size: 28,
+                      style: "text-[#ff2d20]",
+                    },
+                  },
+                  {
+                    title: "livewire",
+                    icon: {
+                      name: SiLivewire,
+                      size: 28,
+                      style: "text-[#fb70a9]",
+                    },
+                  },
+                  {
+                    title: "vue",
+                    icon: {
+                      name: FaVuejs,
+                      size: 34,
+                      style: "text-[#6fb487]",
+                    },
+                  },
+                ],
+              },
+              {
+                title: "Employee Development Program",
+                date: "Okt 2025 - Sept 2026",
+                task: [
+                  "Mengikuti program pengembangan karyawan GeekGarden untuk meningkatkan kompetensi teknis dan profesional.",
+                  "Mengembangkan project latihan berbasis web menggunakan Vue dan Nuxt sesuai materi program.",
+                  "Menerapkan best practice front-end development dan berbagi hasil dengan rekan seprogram.",
+                ],
+                stack: [
+                  {
+                    title: "vue",
+                    icon: {
+                      name: FaVuejs,
+                      size: 34,
+                      style: "text-[#6fb487]",
+                    },
+                  },
+                  {
+                    title: "nuxt",
+                    icon: {
+                      name: TbBrandNuxt,
+                      size: 38,
+                      style: "text-[#6fb487]",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
       {
         year: "2025",
         job: [
