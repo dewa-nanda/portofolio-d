@@ -129,7 +129,7 @@ export default class Dashboard {
       {
         title: "Nest",
         subTitle: "backend",
-        progress: 25,
+        progress: 80,
       },
       {
         title: "typescript",

@@ -30,12 +30,32 @@ export default class ProjectData {
     return [
       {
         id: 1,
-        title: "Restaurant Apps",
+        title: "The Parentings",
         srcImage: "/projects/theParentings.png",
       },
       {
         id: 2,
         title: "Join Geek - Job Portal",
+        srcImage: "/projects/joinGeek.png",
+      },
+      {
+        id: 3,
+        title: "Performatrix - Human Resource Information System",
+        srcImage: "/projects/joinGeek.png",
+      },
+      {
+        id: 4,
+        title: "Geek Garden - Information Management System",
+        srcImage: "/projects/joinGeek.png",
+      },
+      {
+        id: 5,
+        title: "Geek Garden - Procurement",
+        srcImage: "/projects/joinGeek.png",
+      },
+      {
+        id: 6,
+        title: "Geek Garden - Enterprise Resource Planning",
         srcImage: "/projects/joinGeek.png",
       },
     ];
@@ -45,27 +65,26 @@ export default class ProjectData {
     return [
       {
         id: 1,
-        title: "Restaurant App",
+        title: "The Parentings",
         imgSrc: "/projects/theParentings.png",
         description:
-          "Restaurant Apps is a web application designed to help users discover restaurants. It offers a user-friendly interface with features like restaurant listing, search functionality, and detailed restaurant views. The app is fully responsive, making it accessible on both mobile and desktop devices.",
+          "The Parentings is a web application developed during the Dicoding Studi Independent program. It slices UI/UX designs into clean code, integrates RESTful APIs for dynamic data, and is built with modular, maintainable frontend components across multiple devices.",
         keyFeatures: [
-          "Restaurant listings with descriptions",
-          "Search bar for easy discovery",
-          "Detailed restaurant view",
-          "Ratings and reviews system",
-          "Fully responsive design",
-          "Mobile-friendly interface",
+          "UI/UX design slicing into clean HTML, CSS, and JavaScript code",
+          "RESTful API integration for dynamic data rendering",
+          "Modular and reusable frontend components",
+          "Responsive and user-friendly layout across devices",
+          "Agile workflow with backend developers and UI/UX designers",
         ],
-        stack: ["html", "css", "javascript", "sass", "webpack"],
+        stack: ["react", "next"],
         projectInfo: {
-          status: "Active",
-          timeline: "2022",
-          role: "Front end web developer",
+          status: "Done",
+          timeline: "Oct 2023 - Jan 2023",
+          role: "Front End Web Developer",
         },
         link: {
-          demo: "https://ket-restaurant.netlify.app/",
-          github: "https://github.com/dewa-nanda/Restaurant-apps",
+          demo: "",
+          github: "",
         },
       },
       {
@@ -73,23 +92,115 @@ export default class ProjectData {
         title: "Join Geek - Job Portal",
         imgSrc: "/projects/joinGeek.png",
         description:
-          "Join Geek is a modern job portal platform designed to connect job seekers with employers. It provides an intuitive interface for exploring job opportunities, applying online, and managing applications. Employers can also post vacancies and review candidates efficiently. The platform is built to be responsive, ensuring accessibility across devices.",
+          "Join Geek is GeekGarden's job portal, redesigned to be more modern, responsive, and user-friendly. The new interface is implemented with Vue.js following the agreed UI/UX design, ensuring consistent experiences across desktop and mobile devices.",
         keyFeatures: [
-          "Job listings with detailed descriptions",
-          "Advanced search and filter options",
-          "Online application submission",
-          "Employer dashboard for posting and managing jobs",
-          "Candidate profile management",
-          "Responsive and mobile-friendly design",
+          "Modern, responsive job portal redesign",
+          "Vue.js implementation based on agreed UI/UX design",
+          "Backend and API integration",
+          "Bug fixing and cross-device testing",
+          "Team-based development with Git and agile workflow",
         ],
         stack: ["vue", "nuxt"],
         projectInfo: {
-          status: "Active",
-          timeline: "2024",
-          role: "Full Stack Developer",
+          status: "Done",
+          timeline: "Agu 2024 - Nov 2024",
+          role: "Front End Web Developer",
         },
         link: {
           demo: "https://join.geekgarden.id/",
+          github: "",
+        },
+      },
+      {
+        id: 3,
+        title: "Performatrix - Human Resource Information System",
+        imgSrc: "/projects/joinGeek.png",
+        description:
+          "Performatrix is an advanced HRIS (Human Resource Information System) continuously developed with additional features based on client needs. It focuses on bug fixes, UI consistency, and post-deployment support to keep the system stable and user-friendly.",
+        keyFeatures: [
+          "Advanced HRIS features developed per client requirements",
+          "Bug fixing based on client reports for system stability",
+          "Consistent, responsive, and user-friendly UI after updates",
+          "Post-deployment technical support",
+        ],
+        stack: ["react", "next"],
+        projectInfo: {
+          status: "Active",
+          timeline: "January 2025 - now",
+          role: "Front End Web Developer",
+        },
+        link: {
+          demo: "",
+          github: "",
+        },
+      },
+      {
+        id: 4,
+        title: "Geek Garden - Information Management System",
+        imgSrc: "/projects/joinGeek.png",
+        description:
+          "Geek Garden's Information Management System is a web-based management platform built with Vue and Nuxt. It integrates components with backend APIs for real-time data and focuses on dashboards, reports, attendance, and overall data management.",
+        keyFeatures: [
+          "Web-based UI built with Vue and Nuxt",
+          "UI component integration with backend APIs for real-time data",
+          "Dashboard, report, attendance, and data management features",
+          "Frontend performance optimization for a responsive system",
+        ],
+        stack: ["vue", "nuxt"],
+        projectInfo: {
+          status: "Done",
+          timeline: "January 2025 - March 2025",
+          role: "Front End Web Developer",
+        },
+        link: {
+          demo: "",
+          github: "",
+        },
+      },
+      {
+        id: 5,
+        title: "Geek Garden - Procurement",
+        imgSrc: "/projects/joinGeek.png",
+        description:
+          "Geek Garden's Procurement module digitizes the goods and services procurement process. It includes an approval workflow (submission, verification, approval), vendor management, and procurement status tracking for full transparency.",
+        keyFeatures: [
+          "Digital procurement module for goods and services",
+          "Approval workflow: submission, verification, and approval",
+          "Vendor management and procurement status tracking",
+          "Backend coordination for transaction and reporting data",
+        ],
+        stack: ["vue", "nuxt"],
+        projectInfo: {
+          status: "Done",
+          timeline: "March 2025 - June 2025",
+          role: "Front End Web Developer",
+        },
+        link: {
+          demo: "",
+          github: "",
+        },
+      },
+      {
+        id: 6,
+        title: "Geek Garden - Enterprise Resource Planning",
+        imgSrc: "/projects/joinGeek.png",
+        description:
+          "Geek Garden's Enterprise Resource Planning is a web-based ERP supporting core organizational business processes. It delivers interactive interfaces for inventory, finance, and HR management with synchronized, real-time data across modules.",
+        keyFeatures: [
+          "Web-based ERP modules for core business processes",
+          "Interactive UI for inventory, finance, and HR management",
+          "Cross-module integration with real-time data sync",
+          "Backend API collaboration for transactions and reports",
+          "UI quality assurance through testing and bug fixing before deployment",
+        ],
+        stack: ["react", "next"],
+        projectInfo: {
+          status: "Done",
+          timeline: "Augst 2025 - Nov 2025",
+          role: "Front End Web Developer",
+        },
+        link: {
+          demo: "",
           github: "",
         },
       },
