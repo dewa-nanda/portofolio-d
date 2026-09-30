@@ -5,6 +5,7 @@ import { TbSwitchHorizontal } from "react-icons/tb";
 
 interface THeaderProps {
   section: string;
+  label?: string;
   content: string[];
   setSection: (section: string) => void;
 }
@@ -56,7 +57,7 @@ const Header = (props: THeaderProps) => {
           <div className="flex items-center justify-center mt-1 gap-2">
             <TbSwitchHorizontal className="h-full" size={20} />
 
-            <h2 className="hidden md:block">{props.section}</h2>
+            <h2 className="hidden md:block">{props.label ?? props.section}</h2>
           </div>
         </Card>
       </button>

@@ -14,9 +14,11 @@ const AboutContent = () => {
 
   const tabParam = searchParams.get("tab");
   const validTabs = listSection.map((v) => v.id);
-  const currentSection = validTabs.includes(tabParam ?? "")
+  const currentSectionId = validTabs.includes(tabParam ?? "")
     ? tabParam!
     : listSection[0].id;
+  const currentSection =
+    listSection.find((v) => v.id === currentSectionId) ?? listSection[0];
 
   const [content, setContent] = useState<ReactElement | null>(null);
 
@@ -25,13 +27,13 @@ const AboutContent = () => {
   };
 
   useEffect(() => {
-    const target = listSection.find((v) => v.id === currentSection);
+    const target = listSection.find((v) => v.id === currentSectionId);
 
     if (target) {
       const SectionComponent = target.component;
       setContent(<SectionComponent />);
     }
-  }, [currentSection, listSection]);
+  }, [currentSectionId, listSection]);
 
   return (
     <motion.div
@@ -40,7 +42,8 @@ const AboutContent = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <Header
-        section={currentSection}
+        section={currentSectionId}
+        label={currentSection.label}
         setSection={setSection}
         content={validTabs}
       />
