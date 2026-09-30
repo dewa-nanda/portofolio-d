@@ -21,12 +21,12 @@ const Project = () => {
         </Card>
       </div>
 
-      <div className="mt-8 flex gap-4 flex-wrap">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {listPorject.map((v, k) => (
           <Link href={`/project/${v.id}`} key={`project-${k}`}>
             <Card
               variant="surfaceInteractive"
-              className="w-fit hover:cursor-pointer h-full"
+              className="w-full hover:cursor-pointer h-full !bg-[#1d283a]"
               childrenClassName="!p-3"
             >
               <div className="flex flex-col gap-3">
@@ -35,7 +35,7 @@ const Project = () => {
                   alt="project-image"
                   width={300}
                   height={300}
-                  className="h-[145px] rounded-md"
+                  className="h-[145px] w-full rounded-md"
                 />
 
                 <h2>{v.title}</h2>
