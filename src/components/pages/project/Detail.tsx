@@ -66,48 +66,7 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
               orientation="vertical"
               className="!mx-0 !w-[8px] !h-[32px] !bg-[#ef4444] rounded-2xl"
             />
-            <h2 className="text-xl font-bold text-white line-clamp-1">
-              Key Features
-            </h2>
-          </div>
 
-          <div className="mt-4 flex flex-col gap-2">
-            {detail.keyFeatures.map((v, k) => (
-              <Card
-                variant="surfaceInteractive"
-                className="bg-[#151f32] p-2 hover:cursor-pointer hover:-translate-y-0.5 hover:bg-[#1a253d] shadow-md"
-                key={`key-features-${k}`}
-              >
-                <div className="flex gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-[#d1d5db]">{v}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Card>
-
-        <Card variant="detail" className="p-3">
-          <div className="flex gap-2">
-            <h2 className="text-xl font-bold text-white line-clamp-1">
-              Tech Stack
-            </h2>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mt-4">
-            {detail.stack.map((v, k) => (
-              <div
-                className="bg-[#151e30] rounded-lg text-sm px-4 py-1 hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] hover:bg-[#1a253d] shadow-md"
-                key={`stack-${k}`}
-              >
-                <p>{v}</p>
-              </div>
-            ))}
-          </div>
-        </Card>
-
-        <Card variant="detail" className="p-3">
-          <div className="flex gap-2">
             <h2 className="text-xl font-bold text-white line-clamp-1">
               Project Info
             </h2>
@@ -142,6 +101,85 @@ const Detail = ({ detail }: { detail: DetailProject }) => {
             </div>
           </div>
         </Card>
+
+        <Card variant="detail" className="p-3">
+          <div className="flex gap-2">
+            <Separator
+              orientation="vertical"
+              className="!mx-0 !w-[8px] !h-[32px] !bg-[#ef4444] rounded-2xl"
+            />
+            <h2 className="text-xl font-bold text-white line-clamp-1">
+              Tech Stack
+            </h2>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-4">
+            {detail.stack.map((v, k) => (
+              <div
+                className="bg-[#151e30] rounded-lg text-sm px-4 py-1 hover:cursor-pointer border border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-[#ef4444] hover:bg-[#1a253d] shadow-md"
+                key={`stack-${k}`}
+              >
+                <p>{v}</p>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <Card variant="detail" className="p-3">
+          <div className="flex gap-2">
+            <Separator
+              orientation="vertical"
+              className="!mx-0 !w-[8px] !h-[32px] !bg-[#ef4444] rounded-2xl"
+            />
+            <h2 className="text-xl font-bold text-white line-clamp-1">
+              Key Features
+            </h2>
+          </div>
+
+          <div className="mt-4 flex flex-col gap-2">
+            {detail.keyFeatures.map((v, k) => (
+              <Card
+                variant="surfaceInteractive"
+                className="bg-[#151f32] p-2 hover:cursor-pointer hover:-translate-y-0.5 hover:bg-[#1a253d] shadow-md"
+                key={`key-features-${k}`}
+              >
+                <div className="flex gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-[#d1d5db]">{v}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Card>
+
+        {detail.jobDescription.length > 0 && (
+          <Card variant="detail" className="p-3">
+            <div className="flex gap-2">
+              <Separator
+                orientation="vertical"
+                className="!mx-0 !w-[8px] !h-[32px] !bg-[#ef4444] rounded-2xl"
+              />
+              <h2 className="text-xl font-bold text-white line-clamp-1">
+                Job Description
+              </h2>
+            </div>
+
+            <div className="mt-4 flex flex-col gap-2">
+              {detail.jobDescription.map((v, k) => (
+                <Card
+                  variant="surfaceInteractive"
+                  className="bg-[#151f32] p-2 hover:cursor-pointer hover:-translate-y-0.5 hover:bg-[#1a253d] shadow-md"
+                  key={`key-features-${k}`}
+                >
+                  <div className="flex gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-[#d1d5db]">{v}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </Card>
+        )}
 
         <div className="flex flex-col gap-4">
           {detail.link.demo && (

@@ -1,7 +1,7 @@
 import { FaPython, FaReact } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { SiNextdotjs, SiTensorflow } from "react-icons/si";
-import { FaVuejs } from "react-icons/fa6";
+import { FaGolang, FaVuejs } from "react-icons/fa6";
 import { TbBrandNuxt } from "react-icons/tb";
 import { BiLogoTypescript } from "react-icons/bi";
 
@@ -49,7 +49,7 @@ export default class Dashboard {
       {
         id: "yearsExp",
         title: "Years Exp",
-        count: 1.5,
+        count: 3.5,
       },
       {
         id: "technologies",
@@ -119,6 +119,13 @@ export default class Dashboard {
           name: SiTensorflow,
           size: 34,
           style: "text-[#ffb508]",
+        },
+      },
+      {
+        title: "golang",
+        icon: {
+          name: FaGolang,
+          size: 34,
         },
       },
     ];
