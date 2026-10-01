@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Dewa Putra Hernanda",
   },
   description:
-    "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, and Nuxt.js.",
+    "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
   keywords: [
     "back-end developer",
     "front-end developer",
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Dewa Putra Hernanda",
-    title: "Dewa Putra Hernanda | Front-end Developer",
+    title: "Dewa Putra Hernanda | Fullstack Developer",
     description:
-      "Portfolio of Dewa Putra Hernanda — Front-end Web Developer specializing in React, Next.js, Vue, and Nuxt.js.",
+      "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dewa Putra Hernanda | Front-end Developer",
+    title: "Dewa Putra Hernanda | Fullstack Developer",
     description:
-      "Portfolio of Dewa Putra Hernanda — Front-end Web Developer specializing in React, Next.js, Vue, and Nuxt.js.",
+      "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
     creator: "@dewaputrahernanda",
   },
 };
