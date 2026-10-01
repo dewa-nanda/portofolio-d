@@ -97,7 +97,7 @@ const MainContent = () => {
           >
             <picture className="w-fit">
               <img
-                src="https://github-readme-stats.vercel.app/api/wakatime?username=ffflabs&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"
+                src="https://github-readme-stats.vercel.app/api/wakatime?username=018c72c5-0391-46c7-8add-cd8edfe08d01&layout=compact&hide=other,TSconfig,Text,Image (svg),Makefile,TOML&custom_title=My Code Clock ⏱️"
                 alt="wakatime stats"
                 width={400}
                 onError={(e) => handleImageError(setWakatimeLoaded, e)}
