@@ -18,11 +18,11 @@ const baseUrl = "https://dewaputrahernanda.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Dewa Putra Hernanda | Fullstack Developer",
+    default: "Dewa Putra Hernanda | Software Developer",
     template: "%s | Dewa Putra Hernanda",
   },
   description:
-    "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
+    "Portfolio of Dewa Putra Hernanda — Software Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
   keywords: [
     "back-end developer",
     "front-end developer",
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Dewa Putra Hernanda",
-    title: "Dewa Putra Hernanda | Fullstack Developer",
+    title: "Dewa Putra Hernanda | Software Developer",
     description:
-      "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
+      "Portfolio of Dewa Putra Hernanda — Software Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dewa Putra Hernanda | Fullstack Developer",
+    title: "Dewa Putra Hernanda | Software Developer",
     description:
-      "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
+      "Portfolio of Dewa Putra Hernanda — Software Developer specializing in React, Next.js, Vue, Nuxt.js, Go, Laravel.",
     creator: "@dewaputrahernanda",
   },
 };
