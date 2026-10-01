@@ -18,12 +18,13 @@ const baseUrl = "https://dewaputrahernanda.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Dewa Putra Hernanda | Front-end Developer",
+    default: "Dewa Putra Hernanda | Fullstack Developer",
     template: "%s | Dewa Putra Hernanda",
   },
   description:
-    "Portfolio of Dewa Putra Hernanda — Front-end Web Developer specializing in React, Next.js, Vue, and Nuxt.js.",
+    "Portfolio of Dewa Putra Hernanda — Fullstack Developer specializing in React, Next.js, Vue, and Nuxt.js.",
   keywords: [
+    "back-end developer",
     "front-end developer",
     "web developer",
     "React",
